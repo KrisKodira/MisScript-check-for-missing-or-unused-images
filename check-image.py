@@ -1,10 +1,9 @@
-#TODO: Get directory the file is in and search there
-
 import requests # dependency
 import re
 import os
 import os.path
 import sys
+import shutil
 
 cwd = os.getcwd()
 
@@ -140,9 +139,18 @@ def tellUserStatus():
             cleanPath = cleanPath.replace(str(cwd), '')
             file.write(cleanPath+"\n")
         file.close()
-    else:
-        print("Ok goodbye")
-        sys.exit()
+    
+    moveToFolderForDeletion = input("Do you want to place all unused files inside a folder in the current directory? (y/n) ")
+    if moveToFolderForDeletion == "y":
+        newpath = r""+ cwd +"/MOVED_FILES_FROM_CHECK_IMAGE_SCRIPT"
+        if not os.path.exists(newpath):
+            os.makedirs(newpath)
+            for image in allUnusedImages:
+                shutil.move(str(image), cwd +"/MOVED_FILES_FROM_CHECK_IMAGE_SCRIPT/"+os.path.basename(image))
+        else:
+            print("Ok goodbye!")
+            sys.exit()
+
 
 if toCheckFileOrFolder == "file":
     fileToCheck = input("Which File do you want to check? ")
