@@ -1,16 +1,16 @@
-# Check for missing or unused images in website
+# Check for missing or unused images in a website, web app, electron app etc.
 A Python script that makes it simple to check a website for missing images or unused images
 
-# What is MisScript?
+## What is MisScript?
 MisScript is a Python Script that you can run on your web server to check if any .html, .php, .js or .css files contain dead links to images or if there are any images on the server that are not used by any files.
 
-# Requirements
+## Requirements
 - Python 3  
 - You need to install **Python Requests** to be able to check dead image links that aren't directly on the server.  
 Install it with pip like this:  
     `pip install requests`
 
-# Installation & Usage
+## Installation & Usage
 The easiest way to use MisScript is to download it and place inside the folder of the file or directory you want to check.  
 Then follow these steps:  
 1. Open your terminal in the directory you want to check
@@ -28,7 +28,7 @@ Then follow these steps:
 7. Now you can choose to move all the unused images into a folder (Be careful with this since I haven't tested this enough. I would recommend creating the file from the previous step and then deleting the images by hand.)
 8. That's it!
 
-# Disclaimer
+### Disclaimer
 - Don't use the **moving**-feature (step 7.) on sensitive data since it may break your website
 - Use this script at your own risk
 - I am not responsible for anything that happens with your data
