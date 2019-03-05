@@ -18,6 +18,9 @@ allImagesInFile = []
 allMissingImages = []
 allUnusedImages = []
 
+if sys.version_info[0] < 3:
+    raise Exception("ERROR: Version 3 of Python required")
+
 toCheckFileOrFolder = input("Do you want to check a file or a directory? (file/dir) ")
 
 # Function for size conversion of unused images
@@ -182,7 +185,7 @@ elif toCheckFileOrFolder == "dir":
     filesToCheckInDir = []
 
     toCheckCurrOrCustom = input("Do you want to check the current directory or a custom directory? (curr/ABSOLUTE_PATH_TO_DIR) ")
-    if toCheckCurrOrCustom != "curr":
+    if toCheckCurrOrCustom != "curr" and toCheckCurrOrCustom != "":
         cwd = toCheckCurrOrCustom.strip()
     elif toCheckCurrOrCustom == "curr":
         cwd = cwd
