@@ -186,7 +186,8 @@ elif toCheckFileOrFolder == "dir":
 
     toCheckCurrOrCustom = input("Do you want to check the current directory or a custom directory? (curr/ABSOLUTE_PATH_TO_DIR) ")
     if toCheckCurrOrCustom != "curr" and toCheckCurrOrCustom != "":
-        cwd = toCheckCurrOrCustom.strip()
+        cwd = toCheckCurrOrCustom.strip().replace("\\","")
+        print("CWD: " + cwd)
     elif toCheckCurrOrCustom == "curr":
         cwd = cwd
     else:
