@@ -73,11 +73,11 @@ def checkFile(file):
                     if matchURL[0] != "/":
                         allImagesInFile.append(cwd + matchURL)
                         if os.path.isfile(fileCheckingDir + matchURL) == False:
-                            allMissingImages.append(fileCheckingDir + matchURL + " on line number " + num + " in file " + fileCheckingDir + f.name)
+                            allMissingImages.append(fileCheckingDir + matchURL + " on line number " + num + " in file " + f.name)
                     else:
                         allImagesInFile.append(cwd + matchURL)
                         if os.path.isfile(cwd + matchURL) == False:
-                            allMissingImages.append(cwd + matchURL + " on line number " + num + " in file " + fileCheckingDir + f.name)
+                            allMissingImages.append(cwd + matchURL + " on line number " + num + " in file " + f.name)
 
         # check all existing images
         for path, subdirs, files in os.walk(fileCheckingDir+""):
